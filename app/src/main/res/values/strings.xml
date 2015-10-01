@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ProjecTest</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="page_1">界面一</string>
+</resources>
