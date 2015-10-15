@@ -3,6 +3,7 @@
     package="com.gdeer.projectest" >
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,6 +16,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ProjectAnnouncement"
+            android:label="@string/title_activity_square_project" >
+        </activity>
+        <activity
+            android:name=".Edit"
+            android:label="@string/title_activity_text"
+            android:windowSoftInputMode="adjustResize|stateVisible"  >
         </activity>
     </application>
 

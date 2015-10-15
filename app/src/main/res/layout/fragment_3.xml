@@ -10,9 +10,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="13dp"
             android:textColor="#FFF"
             android:textSize="20dp"
-            android:text="logo" />
+            android:text="消息" />
     </RelativeLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -20,4 +22,5 @@
         android:layout_gravity="center"
         android:text="界面三"
         android:textSize="60sp"/>
+
 </LinearLayout>

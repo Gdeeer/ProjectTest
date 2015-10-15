@@ -1,46 +1,44 @@
 package com.gdeer.projectest;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 
-import com.gdeer.projectest.adapter.MyFragmentPagerAdapter;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+public class Edit extends AppCompatActivity {
 
-public class MainActivity extends FragmentActivity {
+    @Bind(R.id.done)
+    Button done;
+    @Bind(R.id.edit_project)
+    EditText editProject;
 
-    public static final int PAGE_ONE = 0;
-    public static final int PAGE_TWO = 1;
-    public static final int PAGE_THREE = 2;
-    public static final int PAGE_FOUR = 3;
-
-    @Bind(R.id.vpager)
-    ViewPager vpager;
-    @Bind(R.id.m_tablayout)
-    TabLayout mTabLayout;
-    private MyFragmentPagerAdapter mAdapter;
-
-    public void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initWindow();//设置状态栏
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_edit);
         ButterKnife.bind(this);
-        mAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
-        mTabLayout.setTabsFromPagerAdapter(mAdapter);
-        vpager.setAdapter(mAdapter);
-        mTabLayout.setupWithViewPager(vpager);
-
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("data_return", editProject.getText().toString());
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        });
+        initWindow();
     }
-
 
     private SystemBarTintManager tintManager;
 
@@ -55,5 +53,4 @@ public class MainActivity extends FragmentActivity {
             tintManager.setNavigationBarTintEnabled(true);
         }
     }
-
 }

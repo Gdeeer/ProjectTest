@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.gdeer.projectest.Edit"
     android:orientation="vertical">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -15,15 +15,24 @@
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="13dp"
-            android:text="我"
+            android:text="编辑"
             android:textColor="#FFF"
             android:textSize="20dp" />
-    </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_me"
+        <Button
+            android:id="@+id/done"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="10dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/ic_done_white_48dp"/>
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/edit_project"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:layout_height="wrap_content"
+        android:hint="开始编辑..."/>
 
 </LinearLayout>
