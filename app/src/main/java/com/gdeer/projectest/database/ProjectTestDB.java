@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.gdeer.projectest.model.Announcement;
+import com.gdeer.projectest.model.ItemSquare;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +42,21 @@ public class ProjectTestDB {
     public void saveAnnouncement(Announcement announcement) {
         if (announcement != null) {
             ContentValues values = new ContentValues();
-            values.put("announcement_content", announcement.getAnnouncementContent());
+            values.put("title", announcement.getTitle());
+            values.put("tag", announcement.getTag());
+            values.put("count", announcement.getcount());
+            values.put("describe", announcement.getDescribe());
             db.insert("Announcement", null, values);
+        }
+    }
+
+    //将关注栏目标题存储到数据库
+    public void saveMyFollow(ItemSquare item) {
+        if (item != null) {
+            ContentValues values = new ContentValues();
+            values.put("title", item.getItemName());
+            values.put("type", item.getItemType());
+            db.insert("MyFollow", null, values);
         }
     }
 
@@ -55,11 +69,58 @@ public class ProjectTestDB {
             do {
                 Announcement announcement = new Announcement();
                 announcement.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                announcement.setAnnouncementContent(cursor.getString(cursor
-                        .getColumnIndex("announcement_content")));
+                announcement.setTitle(cursor.getString(cursor
+                        .getColumnIndex("title")));
+                announcement.setTag(cursor.getString(cursor
+                        .getColumnIndex("tag")));
+                announcement.setCount(cursor.getString(cursor
+                        .getColumnIndex("count")));
+                announcement.setDescribe(cursor.getString(cursor
+                        .getColumnIndex("describe")));
                 list.add(announcement);
             } while (cursor.moveToNext());
         }
         return list;
+    }
+
+    //从数据库读取关注信息
+    public List<ItemSquare> loadMyFollow() {
+        List<ItemSquare> list = new ArrayList<>();
+        Cursor cursor = db
+                .query("MyFollow", null, null, null, null, null, null);
+        //if (curso)
+        if (cursor.moveToFirst()) {
+            do {
+                String title = "";
+                title = cursor.getString(cursor.getColumnIndex("title"));
+                Integer type = cursor.getInt(cursor.getColumnIndex("type"));
+                ItemSquare item = new ItemSquare(title, type);
+                list.add(item);
+            } while (cursor.moveToNext());
+        }
+        return list;
+    }
+
+    public Announcement searchAndSet(String title) {
+        Announcement announcement = new Announcement();
+        Cursor cursor = db
+                .query("Announcement", null, "title = ?", new String[] {title}, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                announcement.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+                announcement.setTag(cursor.getString(cursor.getColumnIndex("tag")));
+                announcement.setCount(cursor.getString(cursor.getColumnIndex("count")));
+                announcement.setDescribe(cursor.getString(cursor.getColumnIndex("describe")));
+            } while (cursor.moveToNext());
+        }
+        return announcement;
+    }
+
+    public void deleteAnnouncement(String title){
+        db.delete("Announcement", "title = ?", new String[]{title});
+    }
+
+    public void deleteMyFollow(String title){
+        db.delete("MyFollow", "title = ?", new String[]{title});
     }
 }

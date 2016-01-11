@@ -2,9 +2,44 @@
     <string name="app_name">ProjecTest</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="page_1">界面一</string>
+    <string name="action_delete">删除</string>
+    <string name="action_follow">关注</string>
+    <string name="action_unfollow">取消关注</string>
+    <string name="action_settings">设置</string>
+    <string name="page_1">首页</string>
     <string name="title_activity_project">project</string>
     <string name="title_activity_square_project">SquareProject</string>
     <string name="title_activity_text">Text</string>
+    <string name="title_activity_one_announcement">OneAnnouncement</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">用户名</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">密码过短</string>
+    <string name="error_incorrect_password">密码错误</string>
+    <string name="error_field_required">用户名必须填写</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="action_add">添加</string>
+    <string name="action_search">搜索</string>
+    <string name="action_sign_up">注册</string>
+    <string name="action_type_1">公告类</string>
+    <string name="action_type_2">娱乐类</string>
+    <string name="send">发送</string>
+    <string name="login">登录</string>
+    <string name="my_follow">我的关注</string>
+    <string name="my_publish">我的发布</string>
+    <string name="my_resume">我的简历</string>
+    <string name="login_or_signup">登录/注册</string>
+    <string name="edit">编辑</string>
+    <string name="edit_done">完成</string>
 </resources>

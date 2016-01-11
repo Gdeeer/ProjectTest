@@ -21,6 +21,6 @@
         app:tabSelectedTextColor="@color/primary"
         app:tabTextColor="#FF000000"
         app:tabMode="fixed"
-        app:tabGravity="fill"/>
+        app:tabGravity="fill" />
 
 </LinearLayout>

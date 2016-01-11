@@ -2,37 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gdeer.projectest.Edit"
-    android:orientation="vertical">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/primary">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.Edit">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="13dp"
-            android:text="编辑"
-            android:textColor="#FFF"
-            android:textSize="20dp" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
 
-        <Button
-            android:id="@+id/done"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:padding="10dp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="13dp"
-            android:background="@drawable/ic_done_white_48dp"/>
-    </RelativeLayout>
-    <EditText
-        android:id="@+id/edit_project"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/edit_tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="开始编辑..."/>
+        android:background="@color/primary"
+        app:tabIndicatorColor="@color/icons"
+        app:tabSelectedTextColor="@color/icons"
+        app:tabTextColor="#d7d7d7"
+        app:tabMode="scrollable"
+        app:tabGravity="fill"/>
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/edit_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 </LinearLayout>

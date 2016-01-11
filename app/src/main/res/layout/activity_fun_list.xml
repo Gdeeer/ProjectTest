@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gdeer.projectest.activity.FunList">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_fun"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_fun_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#EEEEEE"
+        android:orientation="horizontal"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp">
+
+        <EditText
+            android:id="@+id/fun_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.92"
+            android:background="#FFFFFF"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="3dp"
+            android:padding="8dp"
+            android:maxLines="3"
+            tools:text="你可知那漫天的繁星何时凋落，那飞舞的蝴蝶何时停歇，那流淌的河流何时冰冻，你不知道，就像你不知道我，不知道我在你身上，心里留下的痕迹。"/>
+
+        <Button
+            android:id="@+id/fun_send"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="3dp"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:text="@string/send"
+            android:focusable="true"
+            android:background="@drawable/selector_button_send"/>
+    </LinearLayout>
+
+</RelativeLayout>

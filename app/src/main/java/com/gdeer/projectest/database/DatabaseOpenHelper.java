@@ -10,9 +10,18 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_NAME = "Announcement";
+    private static final String TABLE_NAME2 = "MyFollow";
     public static final String CREATE_ANNOUNCEMENT = "create table "+ TABLE_NAME +" ("
             + "id integer primary key autoincrement, "
-            + "announcement_content text)";
+            + "title text, "
+            + "tag text, "
+            + "count text, "
+            + "describe text)";
+
+    public static final String CREATE_MYFOLLOW = "create table "+ TABLE_NAME2 +" ("
+            + "id integer primary key autoincrement, "
+            + "title text,"
+            + "type integer)";
 
     public DatabaseOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory
             factory, int version) {
@@ -22,6 +31,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_ANNOUNCEMENT);
+        db.execSQL(CREATE_MYFOLLOW);
     }
 
     @Override

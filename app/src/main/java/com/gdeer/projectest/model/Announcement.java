@@ -5,21 +5,41 @@ package com.gdeer.projectest.model;
  */
 public class Announcement {
     private int id;
-    private String announcementContent;
+    private String title;
+    private String tag;
+    private String count;
+    private String describe;
 
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getAnnouncementContent() {
-        return announcementContent;
+    public String getTitle() {
+        return title;
+    }
+    public String getTag() {
+        return tag;
+    }
+    public String getcount() {
+        return count;
+    }
+    public String getDescribe() {
+        return describe;
     }
 
-    public void setAnnouncementContent(String content) {
-        this.announcementContent = content;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+    public void setCount(String count) {
+        this.count = count;
+    }
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 }
