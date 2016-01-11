@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gdeer.projectest.activity.ChatSingle">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/include"/>
+
+    <LinearLayout
+        android:id="@+id/text1"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/message_left"
+        android:layout_below="@id/include"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:id="@+id/left_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="6dp"
+            android:text = "新年快乐" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/message_right"
+        android:layout_below="@+id/text1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="50dp">
+        <TextView
+            android:id="@+id/right_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="6dp"
+            android:textColor="#fff"
+            android:text = "加油，窗前明月光，意识地上霜，巨头望明月，低头思故乡。"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#EEEEEE"
+        android:orientation="horizontal"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp">
+
+        <EditText
+            android:id="@+id/fun_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.92"
+            android:background="#FFFFFF"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="3dp"
+            android:padding="8dp"
+            android:maxLines="3"
+            tools:text="像一阵春风吹过我的侧脸，像一阵细雨打湿我的鞋尖。"/>
+
+        <Button
+            android:id="@+id/fun_send"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="3dp"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:text="@string/send"
+            android:focusable="true"
+            android:background="@drawable/selector_button_send"/>
+    </LinearLayout>
+</RelativeLayout>
